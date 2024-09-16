@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,15 +14,17 @@ public class GameManager : MonoBehaviour
   [SerializeField]
   TMP_Text buttonText;
 
-  public bool currentlyRunning = false;
+  [SerializeField]
+  TMP_Text pointsText;
 
-  // Start is called before the first frame update
+  public bool currentlyRunning = false;
+  private int points;
+
   void Start()
   {
     currentTime = startTime;
   }
 
-  // Update is called once per frame
   void Update()
   {
     if (currentlyRunning)
@@ -32,9 +32,8 @@ public class GameManager : MonoBehaviour
       currentTime -= Time.deltaTime;
       if (currentTime <= 0)
       {
+        SendMessage("OnStop");
         currentTime = 0;
-        currentlyRunning = false;
-        buttonText.text = "Reset";
       }
       UpdateTimeText();
     }
@@ -44,20 +43,52 @@ public class GameManager : MonoBehaviour
   {
     if (currentlyRunning)
     {
-      currentlyRunning = false;
-      buttonText.text = "Reset";
+      SendMessage("OnStop");
     }
     else if (currentTime != startTime)
     {
-      currentTime = startTime;
-      UpdateTimeText();
-      buttonText.text = "Start";
+      SendMessage("OnReset");
     }
     else
     {
-      currentlyRunning = true;
-      buttonText.text = "Stop";
+      SendMessage("OnStart");
     }
+  }
+
+  private void OnStart()
+  {
+    currentlyRunning = true;
+    buttonText.text = "Stop";
+  }
+
+  private void OnStop()
+  {
+    currentlyRunning = false;
+    buttonText.text = "Reset";
+  }
+
+  private void OnReset()
+  {
+    currentTime = startTime;
+    points = 0;
+
+    UpdatePointsText();
+    UpdateTimeText();
+
+    buttonText.text = "Start";
+  }
+
+  public void AddPoints(int pts)
+  {
+    if (!currentlyRunning) return;
+
+    points += pts;
+    UpdatePointsText();
+  }
+
+  private void UpdatePointsText()
+  {
+    pointsText.text = $"Points: {points}";
   }
 
   private void UpdateTimeText()
