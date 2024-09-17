@@ -848,7 +848,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefabs:
   - {fileID: 1318224521082043636, guid: b990e9e44d357264e8ef33c27d9405bd, type: 3}
-  - {fileID: 4176755477151021676, guid: 848cb64e0366a8048ad737deaa32ba44, type: 3}
   maxMonsters: 50
   timeBetweenSpawns: 0.5
   monsterContainer: {fileID: 1386296312}
