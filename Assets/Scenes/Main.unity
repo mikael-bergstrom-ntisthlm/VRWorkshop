@@ -474,14 +474,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458394589}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.49, y: 1.21, z: 2.51}
+  m_LocalRotation: {x: -0, y: -0.23718533, z: -0, w: 0.97146446}
+  m_LocalPosition: {x: -1.021, y: 1.21, z: 0.051}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 909787797}
   m_Father: {fileID: 985904417}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -27.441, z: 0}
 --- !u!1 &550431370
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319891284530448190, guid: fe98cd8a4a4c34f4db532838d7a80c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.947
+      value: 0.444
       objectReference: {fileID: 0}
     - target: {fileID: 6319891284530448190, guid: fe98cd8a4a4c34f4db532838d7a80c36, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1327,8 +1327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefabs:
   - {fileID: 1318224521082043636, guid: b990e9e44d357264e8ef33c27d9405bd, type: 3}
-  maxMonsters: 1500
-  timeBetweenSpawns: 0.1
+  maxMonsters: 50
+  timeBetweenSpawns: 0.5
   monsterContainer: {fileID: 1386296312}
   minDistance: 5
   maxDistance: 10
@@ -1558,7 +1558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8980d2ffae95db04bbc1b33aca0b8e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!1 &1301412021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -1576,7 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8980d2ffae95db04bbc1b33aca0b8e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!1 &1352679049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,7 +1674,7 @@ Transform:
   m_GameObject: {fileID: 1352679049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.264, y: 0.5, z: 2.289}
+  m_LocalPosition: {x: -0.264, y: 0.5, z: 0.786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2345,7 +2343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319891284530448190, guid: fe98cd8a4a4c34f4db532838d7a80c36, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.947
+      value: 0.444
       objectReference: {fileID: 0}
     - target: {fileID: 6319891284530448190, guid: fe98cd8a4a4c34f4db532838d7a80c36, type: 3}
       propertyPath: m_LocalRotation.w
