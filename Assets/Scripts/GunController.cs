@@ -14,17 +14,18 @@ public class GunController : MonoBehaviour
   void Start()
   {
     interactable = GetComponent<XRGrabInteractable>();
-    interactable.activated.AddListener(OnTriggerPress);
-    interactable.deactivated.AddListener(OnTriggerRelease);
+    interactable.activated.AddListener(TriggerPress);
+    interactable.deactivated.AddListener(TriggerRelease);
   }
 
-  void OnTriggerPress(ActivateEventArgs args)
+  void TriggerPress(ActivateEventArgs args)
   {
     Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+    SendMessage("OnTriggerPress");
   }
 
-  void OnTriggerRelease(DeactivateEventArgs args)
+  void TriggerRelease(DeactivateEventArgs args)
   {
-    
+    SendMessage("OnTriggerRelease");
   }
 }
