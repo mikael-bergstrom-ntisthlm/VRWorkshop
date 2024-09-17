@@ -35,13 +35,11 @@ public class MonsterManager : MonoBehaviour
   private void OnStart()
   {
     InvokeRepeating("SpawnMonster", 1f, timeBetweenSpawns);
-    print("more!");
   }
 
   private void OnStop()
   {
     CancelInvoke("SpawnMonster");
-    print("no more!");
     
     foreach (MonsterController monster in monsterContainer.GetComponentsInChildren<MonsterController>())
     {
