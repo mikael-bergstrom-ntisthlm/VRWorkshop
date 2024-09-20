@@ -21,11 +21,11 @@ public class GunController : MonoBehaviour
   void TriggerPress(ActivateEventArgs args)
   {
     Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-    SendMessage("OnTriggerPress");
+    SendMessage("OnTriggerPress", null, SendMessageOptions.DontRequireReceiver);
   }
 
   void TriggerRelease(DeactivateEventArgs args)
   {
-    SendMessage("OnTriggerRelease");
+    SendMessage("OnTriggerRelease", null, SendMessageOptions.DontRequireReceiver);
   }
 }
